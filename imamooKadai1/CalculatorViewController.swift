@@ -17,11 +17,9 @@ class CalculatorViewController: UIViewController {
 
     @IBAction private func calculatePressed(_ sender: UIButton) {
         var sum = 0
-        let textFields = [textField1, textField2, textField3, textField4, textField5]
+        let textFields: [UITextField] = [textField1, textField2, textField3, textField4, textField5]
         for textField in textFields {
-            if let text = textField?.text {
-                sum += Int(text) ?? 0
-            }
+            sum += Int(textField.text ?? "") ?? 0
         }
         resultLabel.text = String(sum)
     }
